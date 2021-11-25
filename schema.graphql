@@ -1,5 +1,10 @@
 type Query {
   hello(name: String!): String!
+  verifyAccountName(
+    bank_code: String!
+    account_number: String!
+    account_name: String
+  ): String!
 }
 
 type Mutation {
