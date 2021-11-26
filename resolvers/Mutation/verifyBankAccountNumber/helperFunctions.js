@@ -48,8 +48,6 @@ const computeEditDistance = (a, b) => {
   // convert strings to lowercase
   a = a.toLowerCase();
   b = b.toLowerCase();
-  console.log("a", a);
-  console.log("b", b);
 
   if (levenshtein(a, b) <= 2) {
     return true;
