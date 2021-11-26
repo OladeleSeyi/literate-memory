@@ -5,17 +5,21 @@ export default async function verifyAccountName(
   _,
   { bank_code, account_number, account_name }
 ) {
+  // TODO: add validation for the BAnk accountnumber and bankcode. Account nuymber should not exceed 10 digits and bank code 3-5 characters that are all numbers.
+
   // 1. Generate the url for Api Call
+
   const url = `https://api.paystack.co/bank/resolve?account_number=${account_number}&bank_code=${bank_code}`;
 
-  // 2. MAke Api Call and reject if the call fails for whatever reason
+  let userData; // we need this for the try catch  down below
 
-  let userData;
+  // 2. Make Api Call and reject if the call fails for whatever reason
 
   try {
     const { data } = await fetchPaystack(url, "get");
-    console.log("data", data);
+
     // check that the account was resolved
+
     if (data.status) {
       userData = data.data;
     } else {
