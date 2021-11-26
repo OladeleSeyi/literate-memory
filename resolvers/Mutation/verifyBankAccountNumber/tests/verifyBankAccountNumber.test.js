@@ -1,7 +1,7 @@
 import verifyBankAccountNumber from "..";
 
 describe("Tests the VerifyBankAccountNumber Query resolver", () => {
-  test("should (naively) test the verifyBankAccountNumber query", async (done) => {
+  test("should (naively) test the verifyBankAccountNumber mutation", async (done) => {
     const vars = {
       user_account_number: "0724407028",
       user_bank_code: "044",

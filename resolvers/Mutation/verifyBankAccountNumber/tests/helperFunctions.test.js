@@ -1,6 +1,6 @@
 import { computeEditDistance } from "../helperFunctions";
 
-describe("This tests all the Verify BAnk Account Helper Functions", () => {
+describe("This tests all the Verify BAnk Account HelperFunctions", () => {
   test("should test computeEdit Distance", () => {
     expect(computeEditDistance("levenshtein", "levenshtein")).toBe(true);
     expect(computeEditDistance("gumbo", "gambol")).toBe(true);
