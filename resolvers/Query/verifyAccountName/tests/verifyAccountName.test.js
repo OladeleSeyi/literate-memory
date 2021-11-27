@@ -16,7 +16,9 @@ describe("These test all the various cases of verifyAccountNmae query", () => {
       bank_code: "058",
       account_number: "0724407028",
     };
-    await expect(verifyAccountName("_", vars)).rejects.toThrow();
+    await expect(verifyAccountName("_", vars)).rejects.toThrow(
+      "Invalid Information"
+    );
     done();
   }, 15000);
 });
