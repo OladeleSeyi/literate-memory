@@ -1,5 +1,5 @@
 import fetchPaystack from "../../utils/fetchPaystack";
-import { computeEditDistance } from "./helperFunctions";
+import { computeEditDistance, validateRequest } from "./helperFunctions";
 
 export default async function verifyBankAccountNumber(
   _,
@@ -9,6 +9,12 @@ export default async function verifyBankAccountNumber(
   // 1 Retrieve the values from the request. They have been destructured.
 
   // 2: Write validation
+
+  await validateRequest({
+    user_account_number,
+    user_bank_code,
+    user_account_name,
+  });
 
   // 3: make the request Url
 

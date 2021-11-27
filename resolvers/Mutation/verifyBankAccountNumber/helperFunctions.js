@@ -1,3 +1,5 @@
+import Joi from "joi";
+
 /*  Each function should ideally be in a file with the same name. However because of the size of this project this will be done in this file for easy readability. */
 /*
   This function was "stolen" from the internet. The comunit continously iterated and tweaked this function till it became speedy.
@@ -53,5 +55,25 @@ const computeEditDistance = (a, b) => {
     return true;
   } else return false;
 };
+
+const schema = Joi.object({
+  user_bank_code: Joi.string().alphanum().length(3).required(),
+  user_account_number: Joi.string().alphanum().length(10).required(),
+  user_account_name: Joi.string().required(),
+});
+
+// validator function for verify account name
+
+export function validateRequest(obj) {
+  try {
+    let isValid = schema.validate(obj);
+    if (isValid.error) {
+      throw isValid.error;
+    }
+    return isValid;
+  } catch (e) {
+    throw e;
+  }
+}
 
 export { levenshtein, computeEditDistance };

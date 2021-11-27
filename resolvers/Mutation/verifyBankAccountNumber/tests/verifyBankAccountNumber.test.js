@@ -36,4 +36,14 @@ describe("Tests the VerifyBankAccountNumber Query resolver", () => {
     );
     done();
   }, 15000);
+
+  test("should fail validation ", async (done) => {
+    const vars = {
+      user_account_number: "0724407028",
+      user_bank_code: "04412",
+      user_account_name: "OLUWASEYI TAMUNOMIEBI OLADELE",
+    };
+    await expect(verifyBankAccountNumber("_", vars)).rejects.toThrow();
+    done();
+  });
 });
