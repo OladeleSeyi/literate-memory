@@ -1,10 +1,12 @@
+# Buycoins Engineering Challenge
+
 ### WHY IS THE PURE LEVENSHTEIN DISTANCE ALGORITHM IS MORE EFFECTIVE DAMERAU-LEVENSHTEIN ALGORITHM
 
 ---
 
 The pure levenshtein algorithm is SHOULD be more effective than the Damerau-Levenshtein in this particular scenario because of how the errors we are trying to accomodate occur. These errors would most likely occur as a result of the data input personnel at banks omitting characters when misspelling user names. Transpositions may not find as lot of relevance in these scenarios.
 
-### Buycoins Challenge
+### ABOUT
 
 This is a simple solution to the [Buycoins Engineering Challenge](https://helicarrier.notion.site/Buycoins-Engineering-Challenge-a906753db59d4bf28fcd127798eadba7)
 
