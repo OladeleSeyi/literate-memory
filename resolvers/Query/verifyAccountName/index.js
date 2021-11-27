@@ -22,7 +22,7 @@ export default async function verifyAccountName(
   try {
     const { data } = await fetchPaystack(url, "get");
 
-    // check that the account was resolved
+    // check that the account was resolved. Tests show this may be redundant.
 
     if (data.status) {
       userData = data.data;
