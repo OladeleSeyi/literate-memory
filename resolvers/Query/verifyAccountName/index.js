@@ -1,11 +1,15 @@
 import fetchPaystack from "../../utils/fetchPaystack";
-import { compareNames, toTitleCase } from "./helperFunctions";
+import { compareNames, toTitleCase, validateRequest } from "./helperFunctions";
 
 export default async function verifyAccountName(
   _,
   { bank_code, account_number, account_name }
 ) {
   // TODO: add validation for the BAnk accountnumber and bankcode. Account nuymber should not exceed 10 digits and bank code 3-5 characters that are all numbers.
+
+  // Validate the request
+
+  validateRequest({ bank_code, account_number, account_name });
 
   // 1. Generate the url for Api Call
 

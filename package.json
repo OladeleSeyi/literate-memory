@@ -4,7 +4,8 @@
   "description": "A NODEJS GRAPHQL API BASED ON THE Serverless Anomaly Innovations Starter and Graphql Yoga",
   "main": "handler.js",
   "scripts": {
-    "test": "serverless-bundle test"
+    "test": "serverless-bundle test",
+    "coverage": "serverless-bundle test --coverage"
   },
   "author": "Oladele Seyi",
   "license": "MIT",
@@ -20,6 +21,7 @@
   "dependencies": {
     "axios": "^0.24.0",
     "graphql-yoga": "^1.18.3",
+    "joi": "^17.4.2",
     "levenshtein-edit-distance": "^3.0.0"
   }
 }
