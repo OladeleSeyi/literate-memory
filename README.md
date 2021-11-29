@@ -30,7 +30,7 @@ You can run the tests by running `npm run test`. Ensure your machine is connecte
 
 ### End to End Tests
 
-- A single end tyo end test ensures the server mounts.
+- A single end to end test ensures the server mounts.
 
 ### Limitations
 
@@ -38,3 +38,6 @@ You can run the tests by running `npm run test`. Ensure your machine is connecte
 
 - THe tests make real HTTP requests instead of mocks. This was to ensure that Tests will with any changes made to the third party api. These tests may fail if you are on a slow internet connection.
 - Testing was done with the developers account number.
+- I rolled back implementation of the algorithm using the levenshtein-edit-distance package from npm because of wierd behaviour during testing. The current implementation is a community accepted gist on github.
+- The Api returns rather vague error messages except when requests fail validation.
+- Finally, both the mutation and the query return a name string.
