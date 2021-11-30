@@ -10,7 +10,7 @@ export default async function verifyBankAccountNumber(
 
   // 2: Write validation
 
-  await validateRequest({
+  validateRequest({
     user_account_number,
     user_bank_code,
     user_account_name,
