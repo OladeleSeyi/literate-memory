@@ -10,7 +10,9 @@ The pure levenshtein algorithm is SHOULD be more effective than the Damerau-Leve
 
 This is a simple solution to the [Buycoins Engineering Challenge](https://helicarrier.notion.site/Buycoins-Engineering-Challenge-a906753db59d4bf28fcd127798eadba7)
 
-This Project extends the serverless stack Node Js Starter and GraphQL yoga and is hosted on [AWS](https://ovmnah49nd.execute-api.us-east-1.amazonaws.com/dev/graphiql)
+This Project extends the serverless stack Node Js Starter and GraphQL yoga and is hosted on [AWS](https://ovmnah49nd.execute-api.us-east-1.amazonaws.com/dev/graphiql).
+
+On this branch an update to persist verification in a db was "demonstrated". it can be found on [AWS](https://cv7wbgy60g.execute-api.us-east-2.amazonaws.com/test/graphiql)
 
 ### Running The Server Locally
 
@@ -19,6 +21,16 @@ This solution is heavily dependent on Serverless. As such you would have to have
 `npm install serverless -g`
 
 Clone the repo and run `npm i`
+
+Create a `.env` file in the root and supply the following vars.
+
+```
+PAYSTACK_SK=SOME Text Key
+TEST_DB=Somevalid DYNAMODB table
+AWS_REGION:us-east-2 Table region
+region=us-east-2
+
+```
 
 Then run `serverless offline start` to begin.
 
@@ -40,4 +52,5 @@ You can run the tests by running `npm run test`. Ensure your machine is connecte
 - Testing was done with the developers account number.
 - I rolled back implementation of the algorithm using the levenshtein-edit-distance package from npm because of wierd behaviour during testing. The current implementation is a community accepted gist on github.
 - The Api returns rather vague error messages except when requests fail validation.
+-
 - Finally, both the mutation and the query return a name string.
