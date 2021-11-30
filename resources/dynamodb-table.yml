@@ -1,0 +1,30 @@
+Resources:
+  BankAccountTable:
+    Type: AWS::DynamoDB::Table
+    DeletionPolicy: Retain
+    Properties:
+      TableName: ${self:custom.bankAccountTable}
+      AttributeDefinitions:
+        - AttributeName: userId
+          AttributeType: S
+        - AttributeName: isVerified
+          AttributeType: S
+        - AttributeName: accountNumber
+          AttributeType: S
+      KeySchema:
+        - AttributeName: userId
+          KeyType: HASH
+        - AttributeName: isVerified
+          KeyType: RANGE
+      GlobalSecondaryIndexes:
+        - IndexName: ${self:custom.bankAccountNumberGSI}
+          KeySchema:
+            - AttributeName: accountNumber
+              KeyType: HASH
+            - AttributeName: userId
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+      # Can build indexes BASED On the varification status of a user.
+      # Set the capacity to auto-scale
+      BillingMode: PAY_PER_REQUEST
